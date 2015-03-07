@@ -1,10 +1,10 @@
 <div id='container' ng-controller="LinksController">
   <div class='navigation'>
   <ul>
-    <li><a href='#' class='index'>All Links</a></li>
-    <li><a href='#' class='create'>Shorten</a></li>
+    <li><a href='#/links' class='links'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
   </ul>
-    <a href='/logout' class='logout'>Logout</a>
+    <a href='#/logout' class='logout'>Logout</a>
   </div>
     <img src='../assets/redirect_icon.png'/>
     <div class='info' ng-repeat="link in LinksController.data.links">

@@ -1,6 +1,9 @@
-<div id='container'>
+<div id='container' ng-controller="ShortenController as Short">
 <!-- Your code here -->
-
+  <form ng-submit="addLink()">
+      <input class='text' type='text' name='url' ng-model="link.url">
+      <input type='submit' value='Shorten'>
+  </form>
+  <img class='spinner' src='../assets/spiffygif_46x46.gif' ng-show="link.url">
+  <div class='message'>{{Short.link}}</div>
 </div>
-
-

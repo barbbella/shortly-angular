@@ -34,12 +34,13 @@ module.exports = {
 
   newLink: function (req, res, next) {
     var url = req.body.url;
-    console.log(req.body);
+    console.log(123455,req.body.url);
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
     }
 
     var createLink = Q.nbind(Link.create, Link);
+    console.log(createLink, 'CREATE LINK @#$OI$%UQOIESJRFOLDFJGDLFK');
     var findLink = Q.nbind(Link.findOne, Link);
 
     findLink({url: url})

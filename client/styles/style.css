@@ -31,11 +31,17 @@ h1 {
   float: left;
 }
 
- .logout {
+.logout {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+  display: block;
+  text-align: center;
   float: right;
 }
 
-.navigation .logout li a {
+.navigation li a {
   width: 100px;
   height: 20px;
   line-height: 20px;
