@@ -1,19 +1,14 @@
 <div id='container' ng-controller="LinksController">
-  <div class='navigation'>
-  <ul>
-    <li><a href='#/links' class='links'>All Links</a></li>
-    <li><a href='#/shorten' class='create'>Shorten</a></li>
-  </ul>
-    <a href='#/logout' class='logout'>Logout</a>
-  </div>
-    <img src='../assets/redirect_icon.png'/>
-    <div class='info' ng-repeat="link in LinksController.data.links">
-        <div class='visits'><span class='count'>{{LinksController.data.links.visits}}</span>Visits</div>
-        <div class='title'>{{LinksController.data.links.title}}</div>
-        <div class='original'>{{LinksController.data.links.url}}</div>
-        <a href='{{LinksController.data.links.base_url}}/{{LinksController.data.links.code}}'>{{LinksController.data.links.base_url}}/{{LinksController.data.links.code}}</a>
+<!--    <img src='../assets/redirect_icon.png'/> -->
+    <h1>HELLO WORLD</h1>
+    <div class='info' ng-repeat="l in data.links">
+        <div class='visits'><span class='count'>{{l.visits | orderBy: visits : reverse}}</span>Visits</div>
+        <div class='title'>{{l.title}}</div>
+        <div class='original'>{{l.url}}</div>
+        <a href='{{l.base_url}}/{{l.code}}'>{{l.base_url}}/{{l.code}}</a>
     </div>
 </div>
 
 
 
+<!-- | orderBy: visits : reverse -->

@@ -18,7 +18,7 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      return resp;
+      return resp.data;
     });
   };
 
