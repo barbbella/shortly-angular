@@ -1,7 +1,6 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  // Your code here
   var getLinks = function(){
     return $http({
       method: 'GET',
@@ -18,17 +17,15 @@ angular.module('shortly.services', [])
       url: '/api/links',
       data: link
     })
-    .then(function(
-      return;
-    })
+    .then(function (resp) {
+      return resp.data;
+    });
   };
 
-    return {
-      getLinks: getLinks,
-      addLink : addLink
-    };
-
-
+  return {
+    getLinks: getLinks,
+    addLink: addLink
+  };
 })
 
 .factory('Auth', function ($http, $location, $window) {

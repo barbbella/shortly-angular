@@ -1,3 +1,19 @@
 <div id='container' ng-controller="LinksController">
-  <!-- Your html here -->
+  <div class='navigation'>
+  <ul>
+    <li><a href='#' class='index'>All Links</a></li>
+    <li><a href='#' class='create'>Shorten</a></li>
+  </ul>
+    <a href='/logout' class='logout'>Logout</a>
+  </div>
+    <img src='../assets/redirect_icon.png'/>
+    <div class='info' ng-repeat="link in LinksController.data.links">
+        <div class='visits'><span class='count'>{{LinksController.data.links.visits}}</span>Visits</div>
+        <div class='title'>{{LinksController.data.links.title}}</div>
+        <div class='original'>{{LinksController.data.links.url}}</div>
+        <a href='{{LinksController.data.links.base_url}}/{{LinksController.data.links.code}}'>{{LinksController.data.links.base_url}}/{{LinksController.data.links.code}}</a>
+    </div>
 </div>
+
+
+
