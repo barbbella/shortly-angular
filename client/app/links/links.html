@@ -1,14 +1,14 @@
 <div id='container' ng-controller="LinksController">
 <!--    <img src='../assets/redirect_icon.png'/> -->
-    <h1>HELLO WORLD</h1>
-    <div class='info' ng-repeat="l in data.links">
-        <div class='visits'><span class='count'>{{l.visits | orderBy: visits : reverse}}</span>Visits</div>
+    <input type='text' ng-model='search' placeholder='filter' />
+    <div class='info' ng-repeat="l in data.links | filter:search | orderBy:'visits':'reverse'">
+        <img src="../assets/redirect_icon.png">
+        <div class='visits'><span class='count'>{{l.visits}}</span>Visits</div>
         <div class='title'>{{l.title}}</div>
         <div class='original'>{{l.url}}</div>
-        <a href='{{l.base_url}}/{{l.code}}'>{{l.base_url}}/{{l.code}}</a>
+        <a href='http://localhost:3000/api/links/{{l.code}}'>{{l.base_url}}/{{l.code}}</a>
     </div>
 </div>
 
 
-
-<!-- | orderBy: visits : reverse -->
+<!-- client/assets/redirect_icon.png

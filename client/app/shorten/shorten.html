@@ -1,8 +1,21 @@
 <div id='container' ng-controller="ShortenController as Short">
-  <form ng-submit="addLink()">
-      <input class='text' type='text' name='url' ng-model="link.url">
-      <input type='submit' value='Shorten'>
+  <form name="shortlyForm" ng-submit="addLink()" novalidate>
+      <input name="link"
+             class='text'
+             type='url'
+             ng-model="link.url"
+             required
+             ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty }">
+      <input type='submit'
+             value='Shorten'
+             ng-disabled="shortlyForm.$invalid">
   </form>
-  <!--<img class='spinner' src='../assets/spiffygif_46x46.gif' ng-show="link.url"> -->
-  <div class='message'>{{link.url}}</div>
+    <div ng-if="shortlyForm.link.$error.required && shortlyForm.$dirty" class='message'>
+        <h2>URL required</h2>
+    </div>
+    <div ng-show="shortlyForm.link.$error.url && shortlyForm.$dirty" class='message'>
+        <h2>Not a valid URL</h2>
+    </div>
+    <!--<img class='spinner' src='../assets/spiffygif_46x46.gif' ng-show="link.url"> -->
+    <div class='message'>{{link.url}}</div>
 </div>
